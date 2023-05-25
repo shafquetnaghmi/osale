@@ -1,0 +1,78 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'shop/shop.css' %}">
+<div id="navbar">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Osale</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <ul class="nav .justify-content-end" style="color:black;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://myshopprime.com/Osale/yypmouq">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shopping bag</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100"
+                src="https://firebasestorage.googleapis.com/v0/b/zoozle-4bc7d.appspot.com/o/ecom%2Fproduct%2Fguytchxagx-1676444623103banner1.webp?alt=media"
+                alt="First slide">
+            <div class="centered">
+                <h3>Browse our latest Products</h3>
+                <button type="button" class="btn"><a href="https://myshopprime.com/Osale/yypmouq">Shop Now</a></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    {% for product in featured_product %}
+    <div class="card" >
+        <img src="{{product.image.url}}" class="card-img" alt="...">
+        <div class="card-bodyy">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">₹{{product.price}}</p>
+            <a href="{{product.link}}" class="btn-buy">Buy Now</a>
+        </div>
+    </div>
+
+ 
+    {% endfor %}
+</div>
+
+<div>
+    <div class="footer">
+        <h1 id="brand"><img src="https://res.cloudinary.com/dhopomdfo/image/upload/v1684928984/logo_xrmab2.jpg"
+                style="height:60px; widht:50px;" alt=""></h1>
+        <p id="social">Let's get social <i style="margin-left:10px;" class="fa-brands fa-facebook-f"></i> <i
+                style="margin-left:10px;" class="fa-brands fa-instagram"></i> <i style="margin-left:10px;"
+                class="fa-brands fa-twitter"></i></p>
+        <p id="social">© 2023 Osale Private Limited. All Rights Reserved.</p>
+    </div>
+</div>
+
+{% endblock %}
