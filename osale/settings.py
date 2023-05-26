@@ -14,7 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from decouple import config
 import os
-#load_dotenv() 
+load_dotenv() 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +29,7 @@ import cloudinary.api
 SECRET_KEY = 'django-insecure-p!ydhmtk_$4m9!2#^7)fqy%3$uw6ghye_g=j8)y1s5o9*=qp=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,7 +47,11 @@ INSTALLED_APPS = [
     'shop',
     'cloudinary',
 ]
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME':os.environ.get('cloud_name'), 
+    'API_KEY':os.environ.get('api_key'), 
+    'API_SECRET': os.environ.get('api_secret'),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,8 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_DIRS =[BASE_DIR/'static']
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 
 # Default primary key field type
@@ -158,5 +164,5 @@ cloudinary.config(
   api_key=os.environ.get('api_key'), 
   #api_key ='533913978623876'
   api_secret=os.environ.get('api_secret'),
-  secure=True
+  #secure=True
 )
