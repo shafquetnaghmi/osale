@@ -28,7 +28,7 @@ import cloudinary.api
 SECRET_KEY = 'django-insecure-p!ydhmtk_$4m9!2#^7)fqy%3$uw6ghye_g=j8)y1s5o9*=qp=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
@@ -148,5 +148,5 @@ cloudinary.config(
   cloud_name = config('cloud_name'), 
   api_key = config('api_key'), 
   api_secret =config('api_secret'),
-  secure = True
+  secure=True
 )
