@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-#from decouple import config
+from decouple import config
 import os
-load_dotenv() 
+#load_dotenv() 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +29,7 @@ import cloudinary.api
 SECRET_KEY = 'django-insecure-p!ydhmtk_$4m9!2#^7)fqy%3$uw6ghye_g=j8)y1s5o9*=qp=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
