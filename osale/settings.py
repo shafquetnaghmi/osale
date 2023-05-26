@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from dotenv import load_dotenv
+#from decouple import config
 import os
-
+load_dotenv() 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -144,10 +145,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+# cloudinary.config( 
+#   cloud_name=config('cloud_name'), 
+#   api_key=config('api_key'), 
+#   #api_key ='533913978623876'
+#   api_secret=config('api_secret'),
+#   secure=True
+# )
+
 cloudinary.config( 
-  cloud_name = config('cloud_name'), 
-  #api_key = config('api_key'), 
-  api_key ='533913978623876'
-  api_secret =config('api_secret'),
+  cloud_name=os.environ.get('cloud_name'), 
+  api_key=os.environ.get('api_key'), 
+  #api_key ='533913978623876'
+  api_secret=os.environ.get('api_secret'),
   secure=True
 )
