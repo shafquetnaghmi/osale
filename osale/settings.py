@@ -29,7 +29,7 @@ import cloudinary.api
 SECRET_KEY = 'django-insecure-p!ydhmtk_$4m9!2#^7)fqy%3$uw6ghye_g=j8)y1s5o9*=qp=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =True
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME':os.environ.get('cloud_name'), 
     'API_KEY':os.environ.get('api_key'), 
-    'API_SECRET': os.environ.get('api_secret'),
+    'API_SECRET': os.environ.get('api_secret')
 }
 
 MIDDLEWARE = [
@@ -128,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

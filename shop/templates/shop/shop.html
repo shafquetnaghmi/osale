@@ -6,7 +6,7 @@
 <div id="navbar">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Osale</a>
+            <a class="navbar-brand" href="#"><img class="brand" src="https://res.cloudinary.com/dhopomdfo/image/upload/v1685181391/Osale_logo_7_eno6ta.png" style="height:50px" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -52,23 +52,22 @@
 
 <div class="container">
     {% for product in featured_product %}
-    <div class="card" >
-        <img src="{{product.image.url}}" class="card-img" alt="...">
-        <div class="card-bodyy">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">₹{{product.price}}</p>
-            <a href="{{product.link}}" class="btn-buy">Buy Now</a>
-        </div>
+    <div class="cardd">
+        <img src="{{product.image.url}}" class="cardd-img" alt="...">
+        <h5 class="cardd-title">{{product.name}}</h5>
+        <p class="cardd-text">₹{{product.price}}</p>
+        <button class="btn-buy"><a href="{{product.link}}" class="btn-buy">Buy Now</a></button>
+
     </div>
 
- 
+
     {% endfor %}
 </div>
 
 <div>
     <div class="footer">
         <h1 id="brand"><img src="https://res.cloudinary.com/dhopomdfo/image/upload/v1684928984/logo_xrmab2.jpg"
-                style="height:60px; width:50px;" alt=""></h1>
+                style="height:80px; width:150px;" alt=""></h1>
         <p id="social">Let's get social <i style="margin-left:10px;" class="fa-brands fa-facebook-f"></i> <i
                 style="margin-left:10px;" class="fa-brands fa-instagram"></i> <i style="margin-left:10px;"
                 class="fa-brands fa-twitter"></i></p>
